@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { SplashCursor } from "@/components/animations";
 
 export default function ClientBody({
   children,
@@ -23,8 +22,7 @@ export default function ClientBody({
 
   return (
     <div className="antialiased">
-      {/* 全局流体光标动效 - 排除功能页面 */}
-      {!isFunctionalPath && <SplashCursor />}
+      {/* 已移除全局流体光标动效，提高性能 */}
       {children}
     </div>
   );

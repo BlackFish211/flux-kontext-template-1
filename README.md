@@ -440,3 +440,19 @@ FluxKontext.space是一个功能完整的AI图像生成平台，具有：
 - 📄 PAYMENT_SECURITY_GUIDE.md - 支付安全指南
 - 📄 env.example - 环境变量配置示例
 - 📁 scripts/ - 各种检查和设置脚本 
+
+---
+
+## 📝 更新日志
+
+### 2023-11-30 性能优化更新
+
+#### ⚡ **优化项目**
+- 移除了鼠标跟随的CSS特效 (`SplashCursor.tsx`)，显著提高页面流畅度
+- 清理了相关动画组件代码，减少了不必要的渲染和资源消耗
+- 改进了客户端体验，特别是在低性能设备上表现更佳
+
+#### 🔧 **文件变更**
+- 修改了 `src/app/ClientBody.tsx`，移除动画特效引用
+- 清理了 `src/components/animations/` 目录下的相关代码
+- 更新了文档，添加性能优化记录
