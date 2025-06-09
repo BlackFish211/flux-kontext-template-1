@@ -51,7 +51,7 @@ export function Navigation() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center">
         {/* 左侧：Logo */}
         <div className="flex-shrink-0">
@@ -82,12 +82,12 @@ export function Navigation() {
                   
                   {/* Resources下拉菜单内容 */}
                   {isResourcesMenuOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg py-2 z-[9999]">
+                    <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-border rounded-lg shadow-md py-2 z-[9999]">
                       {link.subItems?.map((subItem) => (
                         <Link
                           key={subItem.href}
                           href={subItem.href}
-                          className="flex items-center space-x-3 px-4 py-2 text-sm transition-colors hover:bg-accent"
+                          className="flex items-center space-x-3 px-4 py-2 text-sm transition-colors hover:bg-secondary"
                           onClick={() => setIsResourcesMenuOpen(false)}
                         >
                           <subItem.icon className="w-4 h-4 text-primary" />
@@ -126,7 +126,7 @@ export function Navigation() {
             <div className="relative user-dropdown">
               <button
                 onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-accent transition-colors"
+                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-secondary transition-colors"
               >
                 {session.user?.image ? (
                   <img 
@@ -145,10 +145,10 @@ export function Navigation() {
               
               {/* 用户下拉菜单 */}
               {isUserMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg py-2 z-[9999]">
+                <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-border rounded-lg shadow-md py-2 z-[9999]">
                   <Link
                     href="/dashboard"
-                    className="block px-4 py-2 text-sm transition-colors hover:bg-accent"
+                    className="block px-4 py-2 text-sm transition-colors hover:bg-secondary text-foreground"
                     onClick={() => setIsUserMenuOpen(false)}
                   >
                     {common.navigation.dashboard}
@@ -156,7 +156,7 @@ export function Navigation() {
                   <hr className="my-2 border-border" />
                   <button
                     onClick={handleSignOut}
-                    className="w-full text-left px-4 py-2 text-sm transition-colors hover:bg-accent flex items-center space-x-2"
+                    className="w-full text-left px-4 py-2 text-sm transition-colors hover:bg-secondary text-foreground flex items-center space-x-2"
                   >
                     <LogOut className="w-4 h-4" />
                     <span>{common.buttons.signOut}</span>
@@ -171,7 +171,7 @@ export function Navigation() {
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className="text-foreground hover:bg-accent hover:font-semibold active:scale-95 transition-all duration-200"
+                  className="text-foreground hover:bg-secondary hover:font-semibold active:scale-95 transition-all duration-200"
                 >
                   {common.navigation.login}
                 </Button>
@@ -191,7 +191,7 @@ export function Navigation() {
         {/* 移动端汉堡菜单按钮 */}
         <div className="md:hidden flex-shrink-0">
           <button
-            className="p-2 hover:bg-accent rounded-md active:scale-95 transition-all duration-200"
+            className="p-2 hover:bg-secondary rounded-md active:scale-95 transition-all duration-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -206,7 +206,7 @@ export function Navigation() {
 
       {/* 移动端菜单 */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="md:hidden bg-white border-b border-border shadow-md">
           <div className="container mx-auto px-4 py-4 space-y-4">
             {/* 移动端导航链接 */}
             {navLinks.map((link) => (
@@ -216,10 +216,10 @@ export function Navigation() {
                   <div>
                     <button
                       onClick={() => setIsResourcesMenuOpen(!isResourcesMenuOpen)}
-                      className={`flex items-center justify-between w-full py-2 px-3 rounded-md transition-all duration-200 hover:bg-accent hover:font-semibold active:scale-95 ${
+                      className={`flex items-center justify-between w-full py-2 px-3 rounded-md transition-all duration-200 hover:bg-secondary hover:font-semibold active:scale-95 ${
                         pathname.startsWith('/resources') 
-                          ? 'text-primary font-semibold bg-accent' 
-                          : 'text-foreground'
+                          ? 'text-primary font-semibold bg-secondary' 
+                        : 'text-foreground'
                       }`}
                     >
                       <span>{link.label}</span>
@@ -233,7 +233,7 @@ export function Navigation() {
                           <Link
                             key={subItem.href}
                             href={subItem.href}
-                            className="flex items-center space-x-3 py-2 px-3 rounded-md text-sm transition-colors hover:bg-accent"
+                            className="flex items-center space-x-3 py-2 px-3 rounded-md text-sm transition-colors hover:bg-secondary text-foreground"
                             onClick={() => {
                               setIsResourcesMenuOpen(false)
                               setIsMobileMenuOpen(false)
@@ -250,9 +250,9 @@ export function Navigation() {
                   // 普通移动端导航链接
                   <Link
                     href={link.href}
-                    className={`block py-2 px-3 rounded-md transition-all duration-200 hover:bg-accent hover:font-semibold active:scale-95 ${
+                    className={`block py-2 px-3 rounded-md transition-all duration-200 hover:bg-secondary hover:font-semibold active:scale-95 ${
                       pathname === link.href 
-                        ? 'text-primary font-semibold bg-accent' 
+                        ? 'text-primary font-semibold bg-secondary' 
                         : 'text-foreground'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -272,7 +272,7 @@ export function Navigation() {
               ) : session ? (
                 // 移动端已登录状态
                 <>
-                  <div className="flex items-center space-x-3 p-3 bg-accent rounded-lg">
+                  <div className="flex items-center space-x-3 p-3 bg-secondary rounded-lg">
                     {session.user?.image ? (
                       <img 
                         src={session.user.image} 
@@ -286,14 +286,14 @@ export function Navigation() {
                     )}
                     <div>
                       <p className="font-medium text-foreground">{session.user?.name}</p>
-                      <p className="text-sm text-foreground">{session.user?.email}</p>
+                      <p className="text-sm text-muted-foreground">{session.user?.email}</p>
                     </div>
                   </div>
                   <Link href="/dashboard" onClick={() => setIsMobileMenuOpen(false)}>
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      className="w-full justify-start text-foreground hover:bg-accent hover:font-semibold active:scale-95 transition-all duration-200"
+                      className="w-full justify-start text-foreground hover:bg-secondary hover:font-semibold active:scale-95 transition-all duration-200"
                     >
                       {common.navigation.dashboard}
                     </Button>
@@ -302,7 +302,7 @@ export function Navigation() {
                     variant="ghost" 
                     size="sm" 
                     onClick={handleSignOut}
-                    className="w-full justify-start hover:bg-accent hover:font-semibold active:scale-95 transition-all duration-200 text-red-600 hover:text-red-700"
+                    className="w-full justify-start hover:bg-secondary hover:font-semibold active:scale-95 transition-all duration-200 text-red-600 hover:text-red-700"
                   >
                     <LogOut className="w-4 h-4 mr-2" />
                     {common.buttons.signOut}
@@ -315,7 +315,7 @@ export function Navigation() {
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      className="w-full justify-start text-foreground hover:bg-accent hover:font-semibold active:scale-95 transition-all duration-200"
+                      className="w-full justify-start text-foreground hover:bg-secondary hover:font-semibold active:scale-95 transition-all duration-200"
                     >
                       {common.navigation.login}
                     </Button>

@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --background: 11 16 19; /* #0b1013 - 深色背景 */
-    --foreground: 250 250 250; /* #fafafa - 浅色文字 */
-    --card: 11 16 19; /* #0b1013 - 深色卡片背景 */
-    --card-foreground: 250 250 250;
-    --popover: 11 16 19;
-    --popover-foreground: 250 250 250;
+    --background: 245 245 245; /* #f5f5f5 - 浅灰色背景 */
+    --foreground: 33 33 33; /* #212121 - 深色文字 */
+    --card: 255 255 255; /* #ffffff - 白色卡片背景 */
+    --card-foreground: 33 33 33;
+    --popover: 255 255 255;
+    --popover-foreground: 33 33 33;
     --primary: 204 175 133; /* #ccaf85 - 橙色强调色 */
-    --primary-foreground: 11 16 19;
-    --secondary: 53 61 81; /* #353d51 - 深色次要背景 */
-    --secondary-foreground: 250 250 250;
-    --muted: 52 48 46; /* #34302e - 静音灰色 */
-    --muted-foreground: 161 161 170; /* #a1a1aa - 弱化文字 */
+    --primary-foreground: 255 255 255;
+    --secondary: 229 229 229; /* #e5e5e5 - 浅灰次要背景 */
+    --secondary-foreground: 33 33 33;
+    --muted: 240 240 240; /* #f0f0f0 - 静音灰色 */
+    --muted-foreground: 115 115 115; /* #737373 - 弱化文字 */
     --accent: 78 154 203; /* #4e9acb - 蓝色强调色 */
-    --accent-foreground: 11 16 19;
+    --accent-foreground: 255 255 255;
     --destructive: 193 43 51; /* #c12b33 */
     --destructive-foreground: 250 250 250;
-    --border: 39 39 42; /* #27272a - 边框颜色 */
-    --input: 39 39 42;
+    --border: 229 229 229; /* #e5e5e5 - 边框颜色 */
+    --input: 229 229 229;
     --ring: 204 175 133;
     --radius: 0.5rem;
   }
@@ -33,7 +33,7 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
-    background: linear-gradient(180deg, #0b1013 0%, #000 100%); /* 深色渐变背景 */
+    background: linear-gradient(180deg, #f5f5f5 0%, #e5e5e5 100%); /* 浅灰色渐变背景 */
     min-height: 100vh;
   }
 

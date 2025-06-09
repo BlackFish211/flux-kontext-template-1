@@ -445,23 +445,28 @@ FluxKontext.space是一个功能完整的AI图像生成平台，具有：
 
 ## 📝 更新日志
 
-### 2023-11-30 性能优化与UI更新
+### 2023-12-01 UI主题更新
+
+#### 🎨 **UI界面更新**
+- 将页面背景调整为浅灰色系，提高清晰度和可读性
+- 优化了导航栏和按钮样式，采用白色卡片与浅灰背景搭配
+- 调整了TwitterShowcase组件的样式，适配浅色背景
+- 改进了移动端菜单的视觉效果，增强视觉层次感
+
+#### 🔧 **文件变更**
+- 更新了 `src/app/globals.css` 中的颜色变量，改为浅灰色系
+- 调整了 `src/components/Navigation.tsx` 的样式，采用白色底与灰色悬停效果
+- 修改了 `src/components/TwitterShowcase.tsx` 的按钮和卡片样式
+- 优化了 `src/components/HomeContent.tsx` 的视觉效果，添加渐变背景
+
+### 2023-11-30 性能优化更新
 
 #### ⚡ **性能优化**
 - 移除了鼠标跟随的CSS特效 (`SplashCursor.tsx`)，显著提高页面流畅度
 - 清理了相关动画组件代码，减少了不必要的渲染和资源消耗
 - 改进了客户端体验，特别是在低性能设备上表现更佳
 
-#### 🎨 **UI界面更新**
-- 保持深色主题风格，提供沉浸式体验
-- 优化了导航栏和按钮样式，改善用户交互
-- 调整了TwitterShowcase组件的样式，适配深色背景
-- 改进了移动端菜单的视觉效果和交互体验
-
 #### 🔧 **文件变更**
 - 修改了 `src/app/ClientBody.tsx`，移除动画特效引用
-- 优化了 `src/app/globals.css` 中的颜色变量
-- 调整了 `src/components/Navigation.tsx` 和 `src/components/TwitterShowcase.tsx` 的样式
-- 优化了 `src/components/HomeContent.tsx` 的视觉效果
 - 清理了 `src/components/animations/` 目录下的相关代码
 - 更新了文档，添加性能优化记录
