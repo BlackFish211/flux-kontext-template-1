@@ -8,6 +8,7 @@ import { GoogleOneTap } from "@/components/GoogleOneTap";
 import { GoogleOneTapTrigger } from "@/components/GoogleOneTapTrigger";
 import { StructuredData } from "@/components/StructuredData";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
