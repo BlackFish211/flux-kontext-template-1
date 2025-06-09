@@ -453,15 +453,15 @@ FluxKontext.space是一个功能完整的AI图像生成平台，具有：
 - 改进了客户端体验，特别是在低性能设备上表现更佳
 
 #### 🎨 **UI界面更新**
-- 将页面背景从深色改为白色，提高内容可读性
-- 优化了导航栏和按钮样式，使界面更加清晰友好
-- 调整了TwitterShowcase组件的样式，更好地适应白色背景
+- 保持深色主题风格，提供沉浸式体验
+- 优化了导航栏和按钮样式，改善用户交互
+- 调整了TwitterShowcase组件的样式，适配深色背景
 - 改进了移动端菜单的视觉效果和交互体验
 
 #### 🔧 **文件变更**
 - 修改了 `src/app/ClientBody.tsx`，移除动画特效引用
-- 更新了 `src/app/globals.css`，修改全局颜色变量
+- 优化了 `src/app/globals.css` 中的颜色变量
 - 调整了 `src/components/Navigation.tsx` 和 `src/components/TwitterShowcase.tsx` 的样式
 - 优化了 `src/components/HomeContent.tsx` 的视觉效果
 - 清理了 `src/components/animations/` 目录下的相关代码
-- 更新了文档，添加性能优化和UI更新记录
+- 更新了文档，添加性能优化记录
