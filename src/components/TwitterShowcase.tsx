@@ -96,16 +96,17 @@ export function TwitterShowcase() {
         {/* 标题区域 - 简化布局，更好居中 */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text">
+            <h2 className="text-3xl md:text-4xl font-bold text-accent">
               {twitterShowcase.title}
             </h2>
-            {/* 滚动按钮 - 移到右侧 */}
+            {/* 滚动按钮 - 改为更友好的样式 */}
             <div className="flex space-x-2 ml-8">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => scroll('left')}
-                className="w-10 h-10 p-0 border-2 border-white/20 bg-black/20 text-white hover:bg-primary/20 hover:border-primary/50 backdrop-blur-sm"
+                className="w-10 h-10 p-0 border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 hover:border-gray-400"
+                aria-label="上一页"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -115,7 +116,8 @@ export function TwitterShowcase() {
                 variant="outline"
                 size="sm"
                 onClick={() => scroll('right')}
-                className="w-10 h-10 p-0 border-2 border-white/20 bg-black/20 text-white hover:bg-primary/20 hover:border-primary/50 backdrop-blur-sm"
+                className="w-10 h-10 p-0 border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 hover:border-gray-400"
+                aria-label="下一页"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -129,7 +131,7 @@ export function TwitterShowcase() {
           </p>
           
           {/* 滑动提示 - 简化样式 */}
-          <div className="flex items-center justify-center space-x-2 text-primary/70 text-sm">
+          <div className="flex items-center justify-center space-x-2 text-gray-500 text-sm">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -140,7 +142,7 @@ export function TwitterShowcase() {
           </div>
         </div>
 
-        {/* 横向滑动容器 - 优化高度和间距 */}
+        {/* 横向滑动容器 - 调整样式适应白色背景 */}
         <div 
           ref={scrollRef}
           className="overflow-x-auto scrollbar-hide"
@@ -149,8 +151,8 @@ export function TwitterShowcase() {
             {twitterEmbeds.map((embed) => (
               <div 
                 key={embed.id} 
-                className="flex-none w-80 bg-card/10 border border-border/20 rounded-lg p-4"
-                style={{ minHeight: '500px' }} // 固定最小高度，避免空白
+                className="flex-none w-80 bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
+                style={{ minHeight: '500px' }} 
               >
                 <div 
                   className="twitter-content w-full h-full"
